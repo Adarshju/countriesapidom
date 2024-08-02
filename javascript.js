@@ -1,59 +1,59 @@
-// // fetchData that returns a Promise
+// fetchData that returns a Promise
 
-// function fetchData() {
-//   return new Promise((res, rej) => {
-//     setTimeout(() => {
-//       let message = "Data fetched successfully";
-//       res(message);
-//     }, 2000);
-//   });
-// }
+function fetchData() {
+  return new Promise((res, rej) => {
+    setTimeout(() => {
+      let message = "Data fetched successfully";
+      res(message);
+    }, 2000);
+  });
+}
 
-// fetchData()
-//   .then((data) => {
-//     console.log(data);
-//   })
-//   .catch((error) => {
-//     console.log("Data fecthing error", error);
-//   });
+fetchData()
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.log("Data fecthing error", error);
+  });
 
-// //handle fetchdata error
+//handle fetchdata error
 
-// function fetchDataerror() {
-//   return new Promise((res, rej) => {
-//     setTimeout(() => {
-//       let message = "Data fetched successfully";
-//       let error = "Failed to fetch data";
-//       rej(error);
-//     }, 2000);
-//   });
-// }
+function fetchDataerror() {
+  return new Promise((res, rej) => {
+    setTimeout(() => {
+      let message = "Data fetched successfully";
+      let error = "Failed to fetch data";
+      rej(error);
+    }, 2000);
+  });
+}
 
-// fetchDataerror()
-//   .then((data) => {
-//     console.log(data);
-//   })
-//   .catch((error) => {
-//     console.log(error);
-//   });
+fetchDataerror()
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 
-//   fetchdata using async
-// async function fetchdataasync() {
-//   try {
-//     // let fetchdata = "data fetched successfully";
-//     const data = await fetch('https://restcountries.com/v3.1/allS')  //INVALID LINK FOR TESTING ERROR HANDLING
-//     if (data.ok) {
-//         let message = "data fetchedData fetched successfully";
-//       console.log(message);
+  // fetchdata using async
+async function fetchdataasync() {
+  try {
+    // let fetchdata = "data fetched successfully";
+    const data = await fetch('https://restcountries.com/v3.1/allS')  //INVALID LINK FOR TESTING ERROR HANDLING
+    if (data.ok) {
+        let message = "data fetchedData fetched successfully";
+      console.log(message);
 
-//     } else {
-//         throw "Failed to fetch data";
-//     }
-//   } catch (err) {
-//     console.log(err);
-//   }
-// }
-// fetchdataasync();
+    } else {
+        throw "Failed to fetch data";
+    }
+  } catch (err) {
+    console.log(err);
+  }
+}
+fetchdataasync();
 
 async function getCountryData() {
   fetch("https://restcountries.com/v3.1/all")
