@@ -66,8 +66,6 @@ async function getCountryData() {
     })
     .then((data) => {
       data.forEach((obj) => {
-        console.log(obj);
-
         const container = document.getElementById("container");
         const newcard = document.createElement("div");
         const all = [
